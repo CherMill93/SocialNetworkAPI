@@ -18,6 +18,15 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'thought'
   },
+  userId:{
+    id: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId()
+  },
+  createdAt:{
+    type: Date,
+    default: Date.now,
+    get: createdAtVal => moment(createdAtVal).format('"MMM Do YY"')
+  },
 })
 
 const User = model('User, UserSchema');

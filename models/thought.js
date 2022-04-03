@@ -16,7 +16,10 @@ const ThoughtSchema = new Schema({
     type: String,
     required: true
   },
-  // reactions:{}
+  thoughtId:{
+    id: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId()
+  }
 })
 
 const Thought = model('Thought, ThoughtSchema');
