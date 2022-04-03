@@ -18,3 +18,7 @@ const ThoughtSchema = new Schema({
   },
   // reactions:{}
 })
+
+const Thought = model('Thought, ThoughtSchema');
+
+module.exports = Thought;

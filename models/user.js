@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
+const moment = require('moment');
 
 const UserSchema = new Schema({
   username:{
@@ -17,5 +18,8 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'thought'
   },
-
 })
+
+const User = model('User, UserSchema');
+
+module.exports = User;
